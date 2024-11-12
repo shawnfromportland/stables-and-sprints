@@ -38,6 +38,9 @@ to launch the app experience go to localhost:3000.
 you should see a hardcoded profile page for user id 1, and a races page to run races. 
 
 
+![shawnfromportland_a_jockey_on_a_horse_illustration_with_sharp_86e424fd-93a7-4adb-ac8c-d82ed793007f_0](https://github.com/user-attachments/assets/b30a3e12-3046-4aae-993a-48ce1ad8b1bc)
+
+
 ## Philosophical Overview
 
 This project aims to explore a potential LLM chat-based software development workflow. By minimizing human intervention in the development process and eliminating all grunt work and all writing of actual code almost entirely, it is a proof of concept that raises important questions about the future of software engineering, such as:
@@ -97,9 +100,6 @@ Principles:
     - **Framework-Free Minimal Responsive Raw CSS**: Utilizes straightforward, raw CSS for a minimal, responsive layout that’s mobile-friendly.
 
 This stack, combined with an AI-driven workflow, enables a flexible, efficient, and type-safe development process.
-
-
-![shawnfromportland_a_jockey_on_a_horse_illustration_with_sharp_86e424fd-93a7-4adb-ac8c-d82ed793007f_0](https://github.com/user-attachments/assets/b30a3e12-3046-4aae-993a-48ce1ad8b1bc)
 
 
 
