@@ -1,46 +1,108 @@
-# Getting Started with Create React App
+# Stables & Sprints
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to **Stables & Sprints**, a 100% AI-generated racehorse management and horse racing simulation app. 
+    
+This app is an experimental demonstration of the potential for using LLM chat tools to generate entire codebases with minimal human intervention, while maximizing for human interpretability, clarity, and ease of iterative dev process. 
 
-## Available Scripts
 
-In the project directory, you can run:
+### Setup
 
-### `npm start`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/stables-and-sprints.git
+Install dependencies for the frontend:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```cd frontend && npm install
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Install dependencies for the backend:
 
-### `npm test`
+```cd ../backend && npm install```
+Install root dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```cd .. && npm install```
+Start the project:
 
-### `npm run build`
+```npm run start```
+This will start:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The backend on localhost:3000
+The frontend on localhost:3001
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+to get a realtime interactive UI of your backend api visit localhost:3000/api (swagger UI) 
+  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+to launch the app experience go to localhost:3000. 
 
-### `npm run eject`
+you should see a hardcoded profile page for user id 1, and a races page to run races. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Philosophical Overview
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This project aims to explore a potential LLM chat-based software development workflow. By minimizing human intervention in the development process and eliminating all grunt work and all writing of actual code almost entirely, it is a proof of concept that raises important questions about the future of software engineering, such as:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **What does the future of software development look like with advanced AI tools?**
+- **Why should developers still write code when AI can do it faster and with fewer mistakes?**
+- **How much human involvement is truly necessary to create high-quality, interpretable and maintainable applications?**
 
-## Learn More
+### What This Demo Aims to Accomplish:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Showcase a minimal viable product (MVP)**: Create a simple but functional full-stack app, generated entirely by AI.
+- **Demonstrate an AI-driven development cycle**: A proof of concept for how LLMs can generate well-structured, maintainable code.
+- **Explore developer workflows**: Maximize efficiency by reducing the need for human intervention, while keeping the code readable and understandable.
+- **Provide a working foundation**: A basic horse race simulation app that’s ready to expand upon with additional features like betting, blockchain integration, and more.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### What This Demo Does Not Aim to Accomplish:
+
+- **Full-scale production-ready features**: This app is intentionally kept simple, with many features left out to keep the focus on the AI-driven development cycle.
+- **Polished user experience or advanced graphics**: The UX/UI and graphical elements are minimal, as this demo focuses more on the backend functionality and AI's role in app creation.
+- **Complex or unrealistic use cases**: We intentionally avoided intricate features or overly complex logic in favor of demonstrating a straightforward and clean development process.
+  
+## App Description
+Stables & Sprints simulates horse races, where users can own and race horses. Users can log in, manage their horses, and enter them into races. Admins have additional privileges, such as managing users and scheduling races.
+
+
+## Developer Experience (devX)
+
+The development workflow for Stables & Sprints eliminates (or minimizes) any human-based coding. Instead, the focus shifts toward structuring requirements, orchestrating AI-assisted code generation, and refining generated components. 
+
+This workflow demonstrates how developers can guide machine-generated code rather than write it, resulting in a potentially faster, more efficient development cycle.
+
+Principles:
+
+- **Architecting Information Over Implementation**: The developer’s role shifts toward gathering, organizing, and formalizing requirements rather than manual implementation. Clear, concise documentation and user stories define the app’s functionality and structure, reducing reliance on human coding.
+
+- **Backend Generation with NestJS**: The NestJS framework provides a modular, clean architecture suited to AI code generation. By using concise, single-purpose files and adhering to conventions, the backend remains easy for both humans and AIs to understand and modify. Backend resources are generated with CLI commands, reducing context-switching and improving prompt accuracy.
+
+- **Swagger/OpenAPI Integration**: Swagger documentation is auto-generated for the backend API, creating a definition file used by the frontend. This ensures type-safe, error-proof API access on the client side.
+
+- **Frontend Consumption of OpenAPI Definitions**: Using heyAPI, the frontend app consumes the OpenAPI definition, auto-generating client-side services and types. Each frontend function is type-safe and separated for easy access, with raw CSS providing a minimal, responsive UI.
+
+- **Iterative Workflow**: Development changes are made by updating parameters in backend DTOs, models, or controllers, regenerating the Swagger docs, and re-running the frontend codegen. This provides a fast, iterative workflow focused on architecture rather than implementation details.
+
+
+## Tech Stack
+
+- **Backend**  
+  - **NestJS**: Provides a clean, modular structure ideal for AI-driven generation with concise, single-purpose files.
+  - **Swagger/OpenAPI**: Auto-generates API documentation and client specification, allowing type-safe API consumption in the frontend.
+  - **TypeScript**: Ensures strong typing and integrates seamlessly with AI-generated code.
+  - **TypeORM**: Serves as the ORM layer for data modeling and handling entity relationships.
+  - **SQLite**: Chosen as the default database for simplicity and ease of setup.
+
+- **Frontend**  
+  - **React**: Core framework for UI, chosen for compatibility with autogenerated API types and client calls.
+  - **heyAPI**: Processes the OpenAPI spec to generate client-side services, types, and API functions, maintaining complete typing and separation.
+  - **Framework-Free Minimal Responsive Raw CSS**: Utilizes straightforward, raw CSS for a minimal, responsive layout that’s mobile-friendly.
+
+This stack, combined with an AI-driven workflow, enables a flexible, efficient, and type-safe development process.
+
+
+
+
+
+# License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+# Note:   
+This project is a work in progress. Technical details and more comprehensive instructions will be added as the project develops.
