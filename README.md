@@ -3,39 +3,44 @@
 
 # Stables & Sprints
 
-Welcome to **Stables & Sprints**, a 100% AI-generated racehorse management and horse racing simulation app. 
+**Stables & Sprints** is a 100% AI-generated racehorse management and horse racing simulation app. 
     
 This app is an experimental demonstration investigating the potential for using LLM chat tools to generate entire codebases with minimal human intervention, while maximizing for human interpretability, clarity, and ease of iterative dev process. 
 
 
 ### Setup
+you can clone the app locally and run it:
 
 1. Clone the repository:
    ```git clone https://github.com/shawnfromportland/stables-and-sprints.git```
-Install dependencies for the frontend:
+
+2. Install dependencies for the frontend:
 
 ```cd frontend && npm install```
 
-Install dependencies for the backend:
+3. Install dependencies for the backend:
 
 ```cd ../backend && npm install```
-Install root dependencies:
+  
+4. Install root dependencies:
 
-```cd .. && npm install```
-Start the project:
+```cd .. && npm install```  
+5. Start the project:
 
-```npm run start```
-This will start:
+```npm run start```  
+6. This will start:
 
-The backend on localhost:3000
-The frontend on localhost:3001
+The backend on `localhost:3000`
+The frontend on `localhost:3001`
 
-to get a realtime interactive UI of your backend api visit localhost:3000/api (swagger UI) 
+to get a realtime interactive UI of your backend api visit `localhost:3000/api` (hot-generated swagger UI) 
   
 
-to launch the app experience go to localhost:3000. 
+to launch the front end app experience go to `localhost:3001`. 
 
 you should see a hardcoded profile page for user id 1, and a races page to run races. 
+
+many features are not implemented beyond the scope of this full stack synthetic software demonstration.
 
 
 ![shawnfromportland_a_jockey_on_a_horse_illustration_with_sharp_86e424fd-93a7-4adb-ac8c-d82ed793007f_0](https://github.com/user-attachments/assets/b30a3e12-3046-4aae-993a-48ce1ad8b1bc)
