@@ -2,18 +2,16 @@
 
 Welcome to **Stables & Sprints**, a 100% AI-generated racehorse management and horse racing simulation app. 
     
-This app is an experimental demonstration of the potential for using LLM chat tools to generate entire codebases with minimal human intervention, while maximizing for human interpretability, clarity, and ease of iterative dev process. 
+This app is an experimental demonstration investigating the potential for using LLM chat tools to generate entire codebases with minimal human intervention, while maximizing for human interpretability, clarity, and ease of iterative dev process. 
 
 
 ### Setup
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/stables-and-sprints.git
+   ```git clone https://github.com/shawnfromportland/stables-and-sprints.git```
 Install dependencies for the frontend:
 
-```cd frontend && npm install
-```
+```cd frontend && npm install```
 
 Install dependencies for the backend:
 
