@@ -1,5 +1,5 @@
 
-![shawnfromportland_httpss mj rund21VWAn36SY_genereate_a_launcher_b0826e4d-cfa1-40b4-9c49-4efd3c970cda](https://github.com/user-attachments/assets/c88b788a-8f51-458c-a575-bf206cf763ba)
+<img src="https://github.com/user-attachments/assets/c88b788a-8f51-458c-a575-bf206cf763ba" width="50%" /> 
 
 # Stables & Sprints
 
