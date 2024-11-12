@@ -1,0 +1,15 @@
+.openapi-generator-ignore
+apis/AppApi.ts
+apis/HorseApi.ts
+apis/RaceApi.ts
+apis/UserApi.ts
+apis/index.ts
+index.ts
+models/CreateHorseDto.ts
+models/CreateRaceDto.ts
+models/CreateUserDto.ts
+models/Horse.ts
+models/Race.ts
+models/User.ts
+models/index.ts
+runtime.ts
