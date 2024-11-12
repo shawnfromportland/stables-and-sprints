@@ -1,3 +1,6 @@
+
+![shawnfromportland_httpss mj rund21VWAn36SY_genereate_a_launcher_b0826e4d-cfa1-40b4-9c49-4efd3c970cda](https://github.com/user-attachments/assets/c88b788a-8f51-458c-a575-bf206cf763ba)
+
 # Stables & Sprints
 
 Welcome to **Stables & Sprints**, a 100% AI-generated racehorse management and horse racing simulation app. 
@@ -95,6 +98,8 @@ Principles:
 
 This stack, combined with an AI-driven workflow, enables a flexible, efficient, and type-safe development process.
 
+
+![shawnfromportland_a_jockey_on_a_horse_illustration_with_sharp_86e424fd-93a7-4adb-ac8c-d82ed793007f_0](https://github.com/user-attachments/assets/b30a3e12-3046-4aae-993a-48ce1ad8b1bc)
 
 
 
