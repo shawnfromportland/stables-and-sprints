@@ -1,0 +1,1502 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Horse Races</title>
+    <style type="text/css">
+      body {
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+
+    </style>
+  </head>
+  <body>
+  <h1>Horse Races</h1>
+    <div class="app-desc">Horse Races api</div>
+    <div class="app-desc">More information: <a href="https://openapi-generator.tech">https://openapi-generator.tech</a></div>
+    <div class="app-desc">Contact Info: <a href="team@openapitools.org">team@openapitools.org</a></div>
+    <div class="app-desc">Version: 1.0</div>
+    <div class="app-desc">BasePath:</div>
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#App">App</a></h4>
+  <ul>
+  <li><a href="#appControllerGetHello"><code><span class="http-method">get</span> /</code></a></li>
+  </ul>
+  <h4><a href="#Horse">Horse</a></h4>
+  <ul>
+  <li><a href="#horseControllerCreate"><code><span class="http-method">post</span> /horse</code></a></li>
+  <li><a href="#horseControllerEnterRace"><code><span class="http-method">post</span> /horse/{horseId}/enter-race/{raceId}</code></a></li>
+  <li><a href="#horseControllerFindAll"><code><span class="http-method">get</span> /horse</code></a></li>
+  <li><a href="#horseControllerFindOne"><code><span class="http-method">get</span> /horse/{id}</code></a></li>
+  <li><a href="#horseControllerRemove"><code><span class="http-method">delete</span> /horse/{id}</code></a></li>
+  <li><a href="#horseControllerUpdate"><code><span class="http-method">patch</span> /horse/{id}</code></a></li>
+  </ul>
+  <h4><a href="#Race">Race</a></h4>
+  <ul>
+  <li><a href="#raceControllerCreate"><code><span class="http-method">post</span> /race</code></a></li>
+  <li><a href="#raceControllerFindAll"><code><span class="http-method">get</span> /race</code></a></li>
+  <li><a href="#raceControllerFindOne"><code><span class="http-method">get</span> /race/{id}</code></a></li>
+  <li><a href="#raceControllerRemove"><code><span class="http-method">delete</span> /race/{id}</code></a></li>
+  <li><a href="#raceControllerStartRace"><code><span class="http-method">post</span> /race/{id}/start</code></a></li>
+  <li><a href="#raceControllerUpdate"><code><span class="http-method">patch</span> /race/{id}</code></a></li>
+  </ul>
+  <h4><a href="#User">User</a></h4>
+  <ul>
+  <li><a href="#userControllerCreate"><code><span class="http-method">post</span> /user</code></a></li>
+  <li><a href="#userControllerFindAll"><code><span class="http-method">get</span> /user</code></a></li>
+  <li><a href="#userControllerFindOne"><code><span class="http-method">get</span> /user/{id}</code></a></li>
+  <li><a href="#userControllerRemove"><code><span class="http-method">delete</span> /user/{id}</code></a></li>
+  <li><a href="#userControllerUpdate"><code><span class="http-method">patch</span> /user/{id}</code></a></li>
+  </ul>
+
+  <h1><a name="App">App</a></h1>
+  <div class="method"><a name="appControllerGetHello"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">appControllerGetHello</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      
+      String
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    
+        <a href="#String">String</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Horse">Horse</a></h1>
+  <div class="method"><a name="horseControllerCreate"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /horse</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">horseControllerCreate</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">CreateHorseDto <a href="#CreateHorseDto">CreateHorseDto</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Horse">Horse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "color" : "color",
+  "races" : [ {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }, {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  } ],
+  "name" : "name",
+  "speedRating" : 5.962133916683182,
+  "retired" : true,
+  "id" : 6.027456183070403,
+  "race_count" : 1.4658129805029452,
+  "currentRace" : {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">201</h4>
+    
+        <a href="#Horse">Horse</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="horseControllerEnterRace"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /horse/{horseId}/enter-race/{raceId}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">horseControllerEnterRace</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">horseId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  default: null </div><div class="param">raceId (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  default: null </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Race">Race</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "startTime" : "2000-01-23T04:56:07.000+00:00",
+  "id" : 5.637376656633329,
+  "horses" : [ null, null ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">201</h4>
+    
+        <a href="#Race">Race</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="horseControllerFindAll"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /horse</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">horseControllerFindAll</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Horse">Horse</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "color" : "color",
+  "races" : [ {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }, {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  } ],
+  "name" : "name",
+  "speedRating" : 5.962133916683182,
+  "retired" : true,
+  "id" : 6.027456183070403,
+  "race_count" : 1.4658129805029452,
+  "currentRace" : {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }
+}, {
+  "color" : "color",
+  "races" : [ {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }, {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  } ],
+  "name" : "name",
+  "speedRating" : 5.962133916683182,
+  "retired" : true,
+  "id" : 6.027456183070403,
+  "race_count" : 1.4658129805029452,
+  "currentRace" : {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="horseControllerFindOne"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /horse/{id}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">horseControllerFindOne</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  default: null </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Horse">Horse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "color" : "color",
+  "races" : [ {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }, {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  } ],
+  "name" : "name",
+  "speedRating" : 5.962133916683182,
+  "retired" : true,
+  "id" : 6.027456183070403,
+  "race_count" : 1.4658129805029452,
+  "currentRace" : {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    
+        <a href="#Horse">Horse</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="horseControllerRemove"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /horse/{id}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">horseControllerRemove</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  default: null </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="horseControllerUpdate"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /horse/{id}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">horseControllerUpdate</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  default: null </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#object">object</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Horse">Horse</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "color" : "color",
+  "races" : [ {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }, {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  } ],
+  "name" : "name",
+  "speedRating" : 5.962133916683182,
+  "retired" : true,
+  "id" : 6.027456183070403,
+  "race_count" : 1.4658129805029452,
+  "currentRace" : {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    
+        <a href="#Horse">Horse</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Race">Race</a></h1>
+  <div class="method"><a name="raceControllerCreate"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /race</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">raceControllerCreate</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">CreateRaceDto <a href="#CreateRaceDto">CreateRaceDto</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Race">Race</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "startTime" : "2000-01-23T04:56:07.000+00:00",
+  "id" : 5.637376656633329,
+  "horses" : [ null, null ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">201</h4>
+    
+        <a href="#Race">Race</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="raceControllerFindAll"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /race</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">raceControllerFindAll</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#Race">Race</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "startTime" : "2000-01-23T04:56:07.000+00:00",
+  "id" : 5.637376656633329,
+  "horses" : [ null, null ]
+}, {
+  "startTime" : "2000-01-23T04:56:07.000+00:00",
+  "id" : 5.637376656633329,
+  "horses" : [ null, null ]
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="raceControllerFindOne"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /race/{id}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">raceControllerFindOne</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  default: null </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Race">Race</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "startTime" : "2000-01-23T04:56:07.000+00:00",
+  "id" : 5.637376656633329,
+  "horses" : [ null, null ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    
+        <a href="#Race">Race</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="raceControllerRemove"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /race/{id}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">raceControllerRemove</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  default: null </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="raceControllerStartRace"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /race/{id}/start</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">raceControllerStartRace</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  default: null </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">201</h4>
+    
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="raceControllerUpdate"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /race/{id}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">raceControllerUpdate</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  default: null </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#object">object</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#Race">Race</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "startTime" : "2000-01-23T04:56:07.000+00:00",
+  "id" : 5.637376656633329,
+  "horses" : [ null, null ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    
+        <a href="#Race">Race</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="User">User</a></h1>
+  <div class="method"><a name="userControllerCreate"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /user</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">userControllerCreate</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">CreateUserDto <a href="#CreateUserDto">CreateUserDto</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#User">User</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "signupDate" : "2000-01-23T04:56:07.000+00:00",
+  "password" : "password",
+  "isSuspended" : true,
+  "scheduledRaces" : [ {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }, {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  } ],
+  "id" : 0.8008281904610115,
+  "isAdmin" : true,
+  "username" : "username",
+  "horses" : [ {
+    "color" : "color",
+    "races" : [ {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }, {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    } ],
+    "name" : "name",
+    "speedRating" : 5.962133916683182,
+    "retired" : true,
+    "id" : 6.027456183070403,
+    "race_count" : 1.4658129805029452,
+    "currentRace" : {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }
+  }, {
+    "color" : "color",
+    "races" : [ {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }, {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    } ],
+    "name" : "name",
+    "speedRating" : 5.962133916683182,
+    "retired" : true,
+    "id" : 6.027456183070403,
+    "race_count" : 1.4658129805029452,
+    "currentRace" : {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">201</h4>
+    
+        <a href="#User">User</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="userControllerFindAll"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /user</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">userControllerFindAll</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#User">User</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "signupDate" : "2000-01-23T04:56:07.000+00:00",
+  "password" : "password",
+  "isSuspended" : true,
+  "scheduledRaces" : [ {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }, {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  } ],
+  "id" : 0.8008281904610115,
+  "isAdmin" : true,
+  "username" : "username",
+  "horses" : [ {
+    "color" : "color",
+    "races" : [ {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }, {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    } ],
+    "name" : "name",
+    "speedRating" : 5.962133916683182,
+    "retired" : true,
+    "id" : 6.027456183070403,
+    "race_count" : 1.4658129805029452,
+    "currentRace" : {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }
+  }, {
+    "color" : "color",
+    "races" : [ {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }, {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    } ],
+    "name" : "name",
+    "speedRating" : 5.962133916683182,
+    "retired" : true,
+    "id" : 6.027456183070403,
+    "race_count" : 1.4658129805029452,
+    "currentRace" : {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }
+  } ]
+}, {
+  "signupDate" : "2000-01-23T04:56:07.000+00:00",
+  "password" : "password",
+  "isSuspended" : true,
+  "scheduledRaces" : [ {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }, {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  } ],
+  "id" : 0.8008281904610115,
+  "isAdmin" : true,
+  "username" : "username",
+  "horses" : [ {
+    "color" : "color",
+    "races" : [ {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }, {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    } ],
+    "name" : "name",
+    "speedRating" : 5.962133916683182,
+    "retired" : true,
+    "id" : 6.027456183070403,
+    "race_count" : 1.4658129805029452,
+    "currentRace" : {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }
+  }, {
+    "color" : "color",
+    "races" : [ {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }, {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    } ],
+    "name" : "name",
+    "speedRating" : 5.962133916683182,
+    "retired" : true,
+    "id" : 6.027456183070403,
+    "race_count" : 1.4658129805029452,
+    "currentRace" : {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }
+  } ]
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="userControllerFindOne"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /user/{id}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">userControllerFindOne</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  default: null </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#User">User</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "signupDate" : "2000-01-23T04:56:07.000+00:00",
+  "password" : "password",
+  "isSuspended" : true,
+  "scheduledRaces" : [ {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }, {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  } ],
+  "id" : 0.8008281904610115,
+  "isAdmin" : true,
+  "username" : "username",
+  "horses" : [ {
+    "color" : "color",
+    "races" : [ {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }, {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    } ],
+    "name" : "name",
+    "speedRating" : 5.962133916683182,
+    "retired" : true,
+    "id" : 6.027456183070403,
+    "race_count" : 1.4658129805029452,
+    "currentRace" : {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }
+  }, {
+    "color" : "color",
+    "races" : [ {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }, {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    } ],
+    "name" : "name",
+    "speedRating" : 5.962133916683182,
+    "retired" : true,
+    "id" : 6.027456183070403,
+    "race_count" : 1.4658129805029452,
+    "currentRace" : {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    
+        <a href="#User">User</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="userControllerRemove"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /user/{id}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">userControllerRemove</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  default: null </div>
+    </div>  <!-- field-items -->
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="userControllerUpdate"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="patch"><code class="huge"><span class="http-method">patch</span> /user/{id}</code></pre></div>
+    <div class="method-summary"> (<span class="nickname">userControllerUpdate</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  default: null </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#object">object</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#User">User</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "signupDate" : "2000-01-23T04:56:07.000+00:00",
+  "password" : "password",
+  "isSuspended" : true,
+  "scheduledRaces" : [ {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  }, {
+    "startTime" : "2000-01-23T04:56:07.000+00:00",
+    "id" : 5.637376656633329,
+    "horses" : [ null, null ]
+  } ],
+  "id" : 0.8008281904610115,
+  "isAdmin" : true,
+  "username" : "username",
+  "horses" : [ {
+    "color" : "color",
+    "races" : [ {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }, {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    } ],
+    "name" : "name",
+    "speedRating" : 5.962133916683182,
+    "retired" : true,
+    "id" : 6.027456183070403,
+    "race_count" : 1.4658129805029452,
+    "currentRace" : {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }
+  }, {
+    "color" : "color",
+    "races" : [ {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }, {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    } ],
+    "name" : "name",
+    "speedRating" : 5.962133916683182,
+    "retired" : true,
+    "id" : 6.027456183070403,
+    "race_count" : 1.4658129805029452,
+    "currentRace" : {
+      "startTime" : "2000-01-23T04:56:07.000+00:00",
+      "id" : 5.637376656633329,
+      "horses" : [ null, null ]
+    }
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    
+        <a href="#User">User</a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#CreateHorseDto"><code>CreateHorseDto</code> - </a></li>
+    <li><a href="#CreateRaceDto"><code>CreateRaceDto</code> - </a></li>
+    <li><a href="#CreateUserDto"><code>CreateUserDto</code> - </a></li>
+    <li><a href="#Horse"><code>Horse</code> - </a></li>
+    <li><a href="#Race"><code>Race</code> - </a></li>
+    <li><a href="#User"><code>User</code> - </a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="CreateHorseDto"><code>CreateHorseDto</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">speedRating </div><div class="param-desc"><span class="param-type"><a href="#number">BigDecimal</a></span>  </div>
+<div class="param">color (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">ownerId </div><div class="param-desc"><span class="param-type"><a href="#number">BigDecimal</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="CreateRaceDto"><code>CreateRaceDto</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">startTime </div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span>  format: date-time</div>
+<div class="param">horseIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#number">array[BigDecimal]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="CreateUserDto"><code>CreateUserDto</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">username </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">password </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">isAdmin </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Horse"><code>Horse</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id </div><div class="param-desc"><span class="param-type"><a href="#number">BigDecimal</a></span>  </div>
+<div class="param">name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">race_count </div><div class="param-desc"><span class="param-type"><a href="#number">BigDecimal</a></span>  </div>
+<div class="param">speedRating </div><div class="param-desc"><span class="param-type"><a href="#number">BigDecimal</a></span>  </div>
+<div class="param">color </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">retired </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">owner </div><div class="param-desc"><span class="param-type"><a href="#User">User</a></span>  </div>
+<div class="param">currentRace </div><div class="param-desc"><span class="param-type"><a href="#Race">Race</a></span>  </div>
+<div class="param">races </div><div class="param-desc"><span class="param-type"><a href="#Race">array[Race]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Race"><code>Race</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id </div><div class="param-desc"><span class="param-type"><a href="#number">BigDecimal</a></span>  </div>
+<div class="param">startTime </div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span>  format: date-time</div>
+<div class="param">scheduledBy </div><div class="param-desc"><span class="param-type"><a href="#User">User</a></span>  </div>
+<div class="param">horses </div><div class="param-desc"><span class="param-type"><a href="#Horse">array[Horse]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="User"><code>User</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">id </div><div class="param-desc"><span class="param-type"><a href="#number">BigDecimal</a></span>  </div>
+<div class="param">username </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">password </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">isAdmin </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">isSuspended </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span>  </div>
+<div class="param">signupDate </div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span>  format: date-time</div>
+<div class="param">horses </div><div class="param-desc"><span class="param-type"><a href="#Horse">array[Horse]</a></span>  </div>
+<div class="param">scheduledRaces </div><div class="param-desc"><span class="param-type"><a href="#Race">array[Race]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>

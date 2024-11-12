@@ -1,0 +1,651 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "contact" : { },
+    "description" : "Horse Races api",
+    "title" : "Horse Races",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "/"
+  } ],
+  "tags" : [ {
+    "description" : "",
+    "name" : "horseraces"
+  } ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "operationId" : "AppController_getHello",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "App" ]
+      }
+    },
+    "/user" : {
+      "get" : {
+        "operationId" : "UserController_findAll",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "items" : {
+                    "$ref" : "#/components/schemas/User"
+                  },
+                  "type" : "array"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "User" ]
+      },
+      "post" : {
+        "operationId" : "UserController_create",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CreateUserDto"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/User"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "User" ]
+      }
+    },
+    "/user/{id}" : {
+      "delete" : {
+        "operationId" : "UserController_remove",
+        "parameters" : [ {
+          "explode" : false,
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "style" : "simple"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ "User" ]
+      },
+      "get" : {
+        "operationId" : "UserController_findOne",
+        "parameters" : [ {
+          "explode" : false,
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "style" : "simple"
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/User"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "User" ]
+      },
+      "patch" : {
+        "operationId" : "UserController_update",
+        "parameters" : [ {
+          "explode" : false,
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "style" : "simple"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateUserDto"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/User"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "User" ]
+      }
+    },
+    "/horse" : {
+      "get" : {
+        "operationId" : "HorseController_findAll",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "items" : {
+                    "$ref" : "#/components/schemas/Horse"
+                  },
+                  "type" : "array"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "Horse" ]
+      },
+      "post" : {
+        "operationId" : "HorseController_create",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CreateHorseDto"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Horse"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "Horse" ]
+      }
+    },
+    "/horse/{id}" : {
+      "delete" : {
+        "operationId" : "HorseController_remove",
+        "parameters" : [ {
+          "explode" : false,
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "style" : "simple"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ "Horse" ]
+      },
+      "get" : {
+        "operationId" : "HorseController_findOne",
+        "parameters" : [ {
+          "explode" : false,
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "style" : "simple"
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Horse"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "Horse" ]
+      },
+      "patch" : {
+        "operationId" : "HorseController_update",
+        "parameters" : [ {
+          "explode" : false,
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "style" : "simple"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateHorseDto"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Horse"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "Horse" ]
+      }
+    },
+    "/horse/{horseId}/enter-race/{raceId}" : {
+      "post" : {
+        "operationId" : "HorseController_enterRace",
+        "parameters" : [ {
+          "explode" : false,
+          "in" : "path",
+          "name" : "horseId",
+          "required" : true,
+          "schema" : {
+            "type" : "number"
+          },
+          "style" : "simple"
+        }, {
+          "explode" : false,
+          "in" : "path",
+          "name" : "raceId",
+          "required" : true,
+          "schema" : {
+            "type" : "number"
+          },
+          "style" : "simple"
+        } ],
+        "responses" : {
+          "201" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Race"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "Horse" ]
+      }
+    },
+    "/race" : {
+      "get" : {
+        "operationId" : "RaceController_findAll",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "items" : {
+                    "$ref" : "#/components/schemas/Race"
+                  },
+                  "type" : "array"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "Race" ]
+      },
+      "post" : {
+        "operationId" : "RaceController_create",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CreateRaceDto"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Race"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "Race" ]
+      }
+    },
+    "/race/{id}" : {
+      "delete" : {
+        "operationId" : "RaceController_remove",
+        "parameters" : [ {
+          "explode" : false,
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "style" : "simple"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ "Race" ]
+      },
+      "get" : {
+        "operationId" : "RaceController_findOne",
+        "parameters" : [ {
+          "explode" : false,
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "style" : "simple"
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Race"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "Race" ]
+      },
+      "patch" : {
+        "operationId" : "RaceController_update",
+        "parameters" : [ {
+          "explode" : false,
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "style" : "simple"
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateRaceDto"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Race"
+                }
+              }
+            },
+            "description" : ""
+          }
+        },
+        "tags" : [ "Race" ]
+      }
+    },
+    "/race/{id}/start" : {
+      "post" : {
+        "operationId" : "RaceController_startRace",
+        "parameters" : [ {
+          "explode" : false,
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "number"
+          },
+          "style" : "simple"
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : ""
+          }
+        },
+        "tags" : [ "Race" ]
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "CreateUserDto" : {
+        "properties" : {
+          "username" : {
+            "type" : "string"
+          },
+          "password" : {
+            "type" : "string"
+          },
+          "isAdmin" : {
+            "type" : "boolean"
+          }
+        },
+        "required" : [ "isAdmin", "password", "username" ],
+        "type" : "object"
+      },
+      "Race" : {
+        "properties" : {
+          "id" : {
+            "type" : "number"
+          },
+          "startTime" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "scheduledBy" : {
+            "$ref" : "#/components/schemas/User"
+          },
+          "horses" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Horse"
+            },
+            "type" : "array"
+          }
+        },
+        "required" : [ "horses", "id", "scheduledBy", "startTime" ],
+        "type" : "object"
+      },
+      "User" : {
+        "properties" : {
+          "id" : {
+            "type" : "number"
+          },
+          "username" : {
+            "type" : "string"
+          },
+          "password" : {
+            "type" : "string"
+          },
+          "isAdmin" : {
+            "type" : "boolean"
+          },
+          "isSuspended" : {
+            "type" : "boolean"
+          },
+          "signupDate" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "horses" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Horse"
+            },
+            "type" : "array"
+          },
+          "scheduledRaces" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Race"
+            },
+            "type" : "array"
+          }
+        },
+        "required" : [ "horses", "id", "isAdmin", "isSuspended", "password", "scheduledRaces", "signupDate", "username" ],
+        "type" : "object"
+      },
+      "Horse" : {
+        "properties" : {
+          "id" : {
+            "type" : "number"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "race_count" : {
+            "type" : "number"
+          },
+          "speedRating" : {
+            "type" : "number"
+          },
+          "color" : {
+            "type" : "string"
+          },
+          "retired" : {
+            "type" : "boolean"
+          },
+          "owner" : {
+            "$ref" : "#/components/schemas/User"
+          },
+          "currentRace" : {
+            "$ref" : "#/components/schemas/Race"
+          },
+          "races" : {
+            "items" : {
+              "$ref" : "#/components/schemas/Race"
+            },
+            "type" : "array"
+          }
+        },
+        "required" : [ "color", "currentRace", "id", "name", "owner", "race_count", "races", "retired", "speedRating" ],
+        "type" : "object"
+      },
+      "UpdateUserDto" : {
+        "properties" : { },
+        "type" : "object"
+      },
+      "CreateHorseDto" : {
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "speedRating" : {
+            "type" : "number"
+          },
+          "color" : {
+            "type" : "string"
+          },
+          "ownerId" : {
+            "type" : "number"
+          }
+        },
+        "required" : [ "name", "ownerId", "speedRating" ],
+        "type" : "object"
+      },
+      "UpdateHorseDto" : {
+        "properties" : { },
+        "type" : "object"
+      },
+      "CreateRaceDto" : {
+        "properties" : {
+          "startTime" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "horseIds" : {
+            "items" : {
+              "type" : "number"
+            },
+            "type" : "array"
+          }
+        },
+        "required" : [ "startTime" ],
+        "type" : "object"
+      },
+      "UpdateRaceDto" : {
+        "properties" : { },
+        "type" : "object"
+      }
+    }
+  }
+}
